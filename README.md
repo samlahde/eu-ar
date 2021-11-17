@@ -18,7 +18,7 @@ When installing Visual Studio 2019, make sure you have the following workflow pa
 - Game development with Unity
 
 
-### Installing MRTK for Unity (method 1)
+### Installing MRTK for Unity
 1. Download the **Mixed Reality Feature Tool**: https://www.microsoft.com/en-us/download/details.aspx?id=102778
 2. Download and import the MRTK Unity packages: https://github.com/Microsoft/MixedRealityToolkit-Unity/releases
 3. Import the MRTK Unity packages into a new 3D Unity project:
