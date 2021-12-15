@@ -1,0 +1,1002 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccf793b7ca1cc645b9cd36d753b8e3c, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  url: https://api.oulunliikenne.fi/proxy/graphql
+  queries:
+  - name: GetAllCameras
+    type: 0
+    query: "query GetAllCameras{\n    cameras{\n        name\n        lat\n       
+      lon\n        presets{\n            imageUrl\n        }\n    }\n}"
+    queryString: cameras
+    returnType: CameraInterface
+    queryOptions:
+    - node
+    - feeds
+    - agencies
+    - ticketTypes
+    - agency
+    - stops
+    - stopsByBbox
+    - stopsByRadius
+    - nearest
+    - departureRow
+    - stop
+    - station
+    - stations
+    - routes
+    - route
+    - trips
+    - trip
+    - fuzzyTrip
+    - cancelledTripTimes
+    - patterns
+    - pattern
+    - clusters
+    - cluster
+    - alerts
+    - serviceTimeRange
+    - bikeRentalStations
+    - bikeRentalStation
+    - bikeParks
+    - bikePark
+    - carParks
+    - carPark
+    - viewer
+    - plan
+    - roadworks
+    - roadwork
+    - cameras
+    - camera
+    - weatherCameras
+    - weatherCamera
+    - trafficCameras
+    - trafficCamera
+    - trafficDisorders
+    - trafficDisorder
+    - trafficAnnouncements
+    - trafficAnnouncement
+    - tmsStations
+    - tmsStation
+    - weatherStations
+    - weatherStation
+    - roadConditions
+    - roadCondition
+    - transportMenu
+    - linkMenu
+    - ecoCounterSites
+    - ecoCounterSite
+    - ecoCounterSiteData
+    - maintenanceVehicleRouteEvent
+    - maintenanceVehicleRouteEventByGeometryId
+    - maintenanceVehicleRouteEvents
+    - maintenanceVehicleObservations
+    - trafficFluencyFeature
+    - trafficFluencyFeatureCollection
+    - variableRoadSigns
+    - variableRoadSign
+    fields:
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: cameraId
+        type: String
+      - name: name
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: presets
+        type: CameraPreset
+      - name: lat
+        type: Float
+      - name: lon
+        type: Float
+      hasChanged: 0
+    - index: 5
+      name: lat
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: cameraId
+        type: String
+      - name: name
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: presets
+        type: CameraPreset
+      - name: lat
+        type: Float
+      - name: lon
+        type: Float
+      hasChanged: 0
+    - index: 6
+      name: lon
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: cameraId
+        type: String
+      - name: name
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: presets
+        type: CameraPreset
+      - name: lat
+        type: Float
+      - name: lon
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: presets
+      type: CameraPreset
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: cameraId
+        type: String
+      - name: name
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: presets
+        type: CameraPreset
+      - name: lat
+        type: Float
+      - name: lon
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: imageUrl
+      type: String
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: presetId
+        type: String
+      - name: presentationName
+        type: String
+      - name: inCollection
+        type: Boolean
+      - name: resolution
+        type: String
+      - name: imageUrl
+        type: String
+      - name: directionCode
+        type: String
+      - name: direction
+        type: String
+      - name: measuredTime
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: GetAllTmsStations
+    type: 0
+    query: "query GetAllTmsStations{\n    tmsStations{\n        tmsStationId\n       
+      name\n        lat\n        lon\n        sensorValues{\n            name\n           
+      sensorValue\n        }\n    }\n}"
+    queryString: tmsStations
+    returnType: TmsStation
+    queryOptions:
+    - node
+    - feeds
+    - agencies
+    - ticketTypes
+    - agency
+    - stops
+    - stopsByBbox
+    - stopsByRadius
+    - nearest
+    - departureRow
+    - stop
+    - station
+    - stations
+    - routes
+    - route
+    - trips
+    - trip
+    - fuzzyTrip
+    - cancelledTripTimes
+    - patterns
+    - pattern
+    - clusters
+    - cluster
+    - alerts
+    - serviceTimeRange
+    - bikeRentalStations
+    - bikeRentalStation
+    - bikeParks
+    - bikePark
+    - carParks
+    - carPark
+    - viewer
+    - plan
+    - roadworks
+    - roadwork
+    - cameras
+    - camera
+    - weatherCameras
+    - weatherCamera
+    - trafficCameras
+    - trafficCamera
+    - trafficDisorders
+    - trafficDisorder
+    - trafficAnnouncements
+    - trafficAnnouncement
+    - tmsStations
+    - tmsStation
+    - weatherStations
+    - weatherStation
+    - roadConditions
+    - roadCondition
+    - transportMenu
+    - linkMenu
+    - ecoCounterSites
+    - ecoCounterSite
+    - ecoCounterSiteData
+    - maintenanceVehicleRouteEvent
+    - maintenanceVehicleRouteEventByGeometryId
+    - maintenanceVehicleRouteEvents
+    - maintenanceVehicleObservations
+    - trafficFluencyFeature
+    - trafficFluencyFeatureCollection
+    - variableRoadSigns
+    - variableRoadSign
+    fields:
+    - index: 1
+      name: tmsStationId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: tmsStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: tmsNumber
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: direction1Municipality
+        type: String
+      - name: direction1MunicipalityCode
+        type: Int
+      - name: direction2Municipality
+        type: String
+      - name: calculatorDeviceType
+        type: String
+      - name: stationSensors
+        type: Int
+      - name: tmsStationType
+        type: String
+      - name: measuredTime
+        type: String
+      - name: sensorValues
+        type: TmsSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: tmsStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: tmsNumber
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: direction1Municipality
+        type: String
+      - name: direction1MunicipalityCode
+        type: Int
+      - name: direction2Municipality
+        type: String
+      - name: calculatorDeviceType
+        type: String
+      - name: stationSensors
+        type: Int
+      - name: tmsStationType
+        type: String
+      - name: measuredTime
+        type: String
+      - name: sensorValues
+        type: TmsSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 29
+      name: lat
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: tmsStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: tmsNumber
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: direction1Municipality
+        type: String
+      - name: direction1MunicipalityCode
+        type: Int
+      - name: direction2Municipality
+        type: String
+      - name: calculatorDeviceType
+        type: String
+      - name: stationSensors
+        type: Int
+      - name: tmsStationType
+        type: String
+      - name: measuredTime
+        type: String
+      - name: sensorValues
+        type: TmsSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 28
+      name: lon
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: tmsStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: tmsNumber
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: direction1Municipality
+        type: String
+      - name: direction1MunicipalityCode
+        type: Int
+      - name: direction2Municipality
+        type: String
+      - name: calculatorDeviceType
+        type: String
+      - name: stationSensors
+        type: Int
+      - name: tmsStationType
+        type: String
+      - name: measuredTime
+        type: String
+      - name: sensorValues
+        type: TmsSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 27
+      name: sensorValues
+      type: TmsSensorValue
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: tmsStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: tmsNumber
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: direction1Municipality
+        type: String
+      - name: direction1MunicipalityCode
+        type: Int
+      - name: direction2Municipality
+        type: String
+      - name: calculatorDeviceType
+        type: String
+      - name: stationSensors
+        type: Int
+      - name: tmsStationType
+        type: String
+      - name: measuredTime
+        type: String
+      - name: sensorValues
+        type: TmsSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 04000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: shortName
+        type: String
+      - name: sensorValue
+        type: Int
+      - name: sensorUnit
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: sensorValue
+      type: Int
+      parentIndexes: 04000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: shortName
+        type: String
+      - name: sensorValue
+        type: Int
+      - name: sensorUnit
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: GetAllWeatherStations
+    type: 0
+    query: "query GetAllWeatherStations{\n    weatherStations{\n        name\n       
+      lat\n        lon\n        sensorValues{\n            name\n            sensorValue\n       
+      }\n    }\n}"
+    queryString: weatherStations
+    returnType: WeatherStation
+    queryOptions:
+    - node
+    - feeds
+    - agencies
+    - ticketTypes
+    - agency
+    - stops
+    - stopsByBbox
+    - stopsByRadius
+    - nearest
+    - departureRow
+    - stop
+    - station
+    - stations
+    - routes
+    - route
+    - trips
+    - trip
+    - fuzzyTrip
+    - cancelledTripTimes
+    - patterns
+    - pattern
+    - clusters
+    - cluster
+    - alerts
+    - serviceTimeRange
+    - bikeRentalStations
+    - bikeRentalStation
+    - bikeParks
+    - bikePark
+    - carParks
+    - carPark
+    - viewer
+    - plan
+    - roadworks
+    - roadwork
+    - cameras
+    - camera
+    - weatherCameras
+    - weatherCamera
+    - trafficCameras
+    - trafficCamera
+    - trafficDisorders
+    - trafficDisorder
+    - trafficAnnouncements
+    - trafficAnnouncement
+    - tmsStations
+    - tmsStation
+    - weatherStations
+    - weatherStation
+    - roadConditions
+    - roadCondition
+    - transportMenu
+    - linkMenu
+    - ecoCounterSites
+    - ecoCounterSite
+    - ecoCounterSiteData
+    - maintenanceVehicleRouteEvent
+    - maintenanceVehicleRouteEventByGeometryId
+    - maintenanceVehicleRouteEvents
+    - maintenanceVehicleObservations
+    - trafficFluencyFeature
+    - trafficFluencyFeatureCollection
+    - variableRoadSigns
+    - variableRoadSign
+    fields:
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: weatherStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: master
+        type: Boolean
+      - name: stationSensors
+        type: Int
+      - name: weatherStationType
+        type: String
+      - name: measuredTime
+        type: GraphQLDateTime
+      - name: sensorValues
+        type: WeatherSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 25
+      name: lat
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: weatherStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: master
+        type: Boolean
+      - name: stationSensors
+        type: Int
+      - name: weatherStationType
+        type: String
+      - name: measuredTime
+        type: GraphQLDateTime
+      - name: sensorValues
+        type: WeatherSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 24
+      name: lon
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: weatherStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: master
+        type: Boolean
+      - name: stationSensors
+        type: Int
+      - name: weatherStationType
+        type: String
+      - name: measuredTime
+        type: GraphQLDateTime
+      - name: sensorValues
+        type: WeatherSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 23
+      name: sensorValues
+      type: WeatherSensorValue
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: weatherStationId
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: collectionInterval
+        type: Int
+      - name: collectionStatus
+        type: String
+      - name: municipality
+        type: String
+      - name: municipalityCode
+        type: String
+      - name: province
+        type: String
+      - name: provinceCode
+        type: String
+      - name: names
+        type: LocalizedNames
+      - name: roadAddress
+        type: RoadAddress
+      - name: liviId
+        type: String
+      - name: country
+        type: String
+      - name: startTime
+        type: String
+      - name: repairMaintenanceTime
+        type: String
+      - name: annualMaintenanceTime
+        type: String
+      - name: state
+        type: String
+      - name: coordinatesETRS89
+        type: Int
+      - name: master
+        type: Boolean
+      - name: stationSensors
+        type: Int
+      - name: weatherStationType
+        type: String
+      - name: measuredTime
+        type: GraphQLDateTime
+      - name: sensorValues
+        type: WeatherSensorValue
+      - name: lon
+        type: Float
+      - name: lat
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: shortName
+        type: String
+      - name: sensorValue
+        type: Float
+      - name: sensorUnit
+        type: String
+      - name: sensorValueDescriptionFi
+        type: String
+      - name: sensorValueDescriptionEn
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: sensorValue
+      type: Float
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: String
+      - name: roadStationId
+        type: Int
+      - name: name
+        type: String
+      - name: shortName
+        type: String
+      - name: sensorValue
+        type: Float
+      - name: sensorUnit
+        type: String
+      - name: sensorValueDescriptionFi
+        type: String
+      - name: sensorValueDescriptionEn
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  mutations: []
+  subscriptions: []
+  loading: 0
