@@ -145,6 +145,7 @@ public class GraphQLTest : MonoBehaviour
             _locationsTMS[i] = Conversions.StringToLatLon(locationString);
             var instance = Instantiate(_markerPrefab);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsTMS[i], true);
+            instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             _spawnedTMSObjects.Add(instance);
 
@@ -208,6 +209,7 @@ public class GraphQLTest : MonoBehaviour
             _locationsWeather[i] = Conversions.StringToLatLon(locationString);
             var instance = Instantiate(_markerPrefab);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsWeather[i], true);
+            instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             _spawnedWeatherObjects.Add(instance);
 
@@ -270,6 +272,7 @@ public class GraphQLTest : MonoBehaviour
             var spawnedObject = _spawnedTMSObjects[i];
             var location = _locationsTMS[i];
             spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+            spawnedObject.transform.position = new Vector3(spawnedObject.transform.position.x, spawnedObject.transform.position.y + _markerOffset, spawnedObject.transform.position.z);
             spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
         }
 
@@ -279,6 +282,7 @@ public class GraphQLTest : MonoBehaviour
             var spawnedObject = _spawnedWeatherObjects[i];
             var location = _locationsWeather[i];
             spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+            spawnedObject.transform.position = new Vector3(spawnedObject.transform.position.x, spawnedObject.transform.position.y + _markerOffset, spawnedObject.transform.position.z);
             spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
         }
     }

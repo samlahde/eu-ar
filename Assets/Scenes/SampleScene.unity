@@ -12463,7 +12463,7 @@ MonoBehaviour:
   timeInterval: 0
   _map: {fileID: 223974235}
   _spawnScale: 0.8
-  _markerOffset: 100
+  _markerOffset: 0.05
   _characterSize: 0.02
   _textYOffset: 0.05
   _markerPrefab: {fileID: 631348416786319502, guid: cbd7b6d9bea2ea042839d44ceb033d52, type: 3}
