@@ -32,6 +32,15 @@ public class GraphQLTest : MonoBehaviour
     float _spawnScale = 100f;
 
     [SerializeField]
+    float _markerOffset = 100f;
+
+    [SerializeField]
+    float _characterSize = 0.01f;
+
+    [SerializeField]
+    float _textYOffset = -100.0f;
+
+    [SerializeField]
     GameObject _markerPrefab;
 
     public List<GameObject> _spawnedTMSObjects;
@@ -169,12 +178,13 @@ public class GraphQLTest : MonoBehaviour
             //Create TextMesh and modify its properties
             TextMesh textMesh = childObj.AddComponent<TextMesh>();
             textMesh.text = text;
-            textMesh.characterSize = 0.2f;
+            textMesh.color = Color.black;
+            textMesh.characterSize = _characterSize;
 
             //Set postion of the TextMesh with offset
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;
-            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + 0.5f, instance.transform.position.z);
+            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _textYOffset, instance.transform.position.z);
 
             //childObj.active = false;
             childObj.transform.localScale = new Vector3(0, 0, 0);
@@ -232,12 +242,13 @@ public class GraphQLTest : MonoBehaviour
             //Create TextMesh and modify its properties
             TextMesh textMesh = childObj.AddComponent<TextMesh>();
             textMesh.text = text;
-            textMesh.characterSize = 0.2f;
+            textMesh.color = Color.black;
+            textMesh.characterSize = _characterSize;
 
             //Set postion of the TextMesh with offset
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;
-            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + 0.5f, instance.transform.position.z);
+            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _textYOffset, instance.transform.position.z);
 
             //childObj.active = false;
             childObj.transform.localScale = new Vector3(0, 0, 0);
