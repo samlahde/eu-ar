@@ -32,7 +32,19 @@ public class GraphQLTest : MonoBehaviour
     float _spawnScale = 100f;
 
     [SerializeField]
-    GameObject _markerPrefab;
+    float _markerOffset = 100f;
+
+    [SerializeField]
+    float _characterSize = 0.01f;
+
+    [SerializeField]
+    float _textYOffset = -100.0f;
+
+    [SerializeField]
+    GameObject _markerPrefabTms;
+
+    [SerializeField]
+    GameObject _markerPrefabWea;
 
     public List<GameObject> _spawnedTMSObjects;
     public List<GameObject> _spawnedWeatherObjects;
@@ -134,8 +146,9 @@ public class GraphQLTest : MonoBehaviour
         {
             var locationString = tmsStations[i].lat + ", " + tmsStations[i].lon;
             _locationsTMS[i] = Conversions.StringToLatLon(locationString);
-            var instance = Instantiate(_markerPrefab);
+            var instance = Instantiate(_markerPrefabTms);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsTMS[i], true);
+            instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             _spawnedTMSObjects.Add(instance);
 
@@ -169,12 +182,13 @@ public class GraphQLTest : MonoBehaviour
             //Create TextMesh and modify its properties
             TextMesh textMesh = childObj.AddComponent<TextMesh>();
             textMesh.text = text;
-            textMesh.characterSize = 0.2f;
+            textMesh.color = Color.black;
+            textMesh.characterSize = _characterSize;
 
             //Set postion of the TextMesh with offset
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;
-            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + 0.5f, instance.transform.position.z);
+            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _textYOffset, instance.transform.position.z);
 
             //childObj.active = false;
             childObj.transform.localScale = new Vector3(0, 0, 0);
@@ -196,8 +210,9 @@ public class GraphQLTest : MonoBehaviour
         {
             var locationString = weatherStations[i].lat + ", " + weatherStations[i].lon;
             _locationsWeather[i] = Conversions.StringToLatLon(locationString);
-            var instance = Instantiate(_markerPrefab);
+            var instance = Instantiate(_markerPrefabWea);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsWeather[i], true);
+            instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             _spawnedWeatherObjects.Add(instance);
 
@@ -232,12 +247,13 @@ public class GraphQLTest : MonoBehaviour
             //Create TextMesh and modify its properties
             TextMesh textMesh = childObj.AddComponent<TextMesh>();
             textMesh.text = text;
-            textMesh.characterSize = 0.2f;
+            textMesh.color = Color.black;
+            textMesh.characterSize = _characterSize;
 
             //Set postion of the TextMesh with offset
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;
-            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + 0.5f, instance.transform.position.z);
+            textMesh.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _textYOffset, instance.transform.position.z);
 
             //childObj.active = false;
             childObj.transform.localScale = new Vector3(0, 0, 0);
@@ -259,6 +275,7 @@ public class GraphQLTest : MonoBehaviour
             var spawnedObject = _spawnedTMSObjects[i];
             var location = _locationsTMS[i];
             spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+            spawnedObject.transform.position = new Vector3(spawnedObject.transform.position.x, spawnedObject.transform.position.y + _markerOffset, spawnedObject.transform.position.z);
             spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
         }
 
@@ -268,6 +285,7 @@ public class GraphQLTest : MonoBehaviour
             var spawnedObject = _spawnedWeatherObjects[i];
             var location = _locationsWeather[i];
             spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+            spawnedObject.transform.position = new Vector3(spawnedObject.transform.position.x, spawnedObject.transform.position.y + _markerOffset, spawnedObject.transform.position.z);
             spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
         }
     }
