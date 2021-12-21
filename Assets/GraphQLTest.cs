@@ -41,7 +41,10 @@ public class GraphQLTest : MonoBehaviour
     float _textYOffset = -100.0f;
 
     [SerializeField]
-    GameObject _markerPrefab;
+    GameObject _markerPrefabTms;
+
+    [SerializeField]
+    GameObject _markerPrefabWea;
 
     public List<GameObject> _spawnedTMSObjects;
     public List<GameObject> _spawnedWeatherObjects;
@@ -143,7 +146,7 @@ public class GraphQLTest : MonoBehaviour
         {
             var locationString = tmsStations[i].lat + ", " + tmsStations[i].lon;
             _locationsTMS[i] = Conversions.StringToLatLon(locationString);
-            var instance = Instantiate(_markerPrefab);
+            var instance = Instantiate(_markerPrefabTms);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsTMS[i], true);
             instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
@@ -207,7 +210,7 @@ public class GraphQLTest : MonoBehaviour
         {
             var locationString = weatherStations[i].lat + ", " + weatherStations[i].lon;
             _locationsWeather[i] = Conversions.StringToLatLon(locationString);
-            var instance = Instantiate(_markerPrefab);
+            var instance = Instantiate(_markerPrefabWea);
             instance.transform.localPosition = _map.GeoToWorldPosition(_locationsWeather[i], true);
             instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y + _markerOffset, instance.transform.position.z);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);

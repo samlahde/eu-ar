@@ -12466,7 +12466,8 @@ MonoBehaviour:
   _markerOffset: 0.05
   _characterSize: 0.02
   _textYOffset: 0.05
-  _markerPrefab: {fileID: 631348416786319502, guid: cbd7b6d9bea2ea042839d44ceb033d52, type: 3}
+  _markerPrefabTms: {fileID: 1693618951365293314, guid: bc7ca9cfc04e7eb4bb7acbb2f09ba533, type: 3}
+  _markerPrefabWea: {fileID: 1331498392766936521, guid: 822b5490258d7914083c1e76b498710a, type: 3}
   _spawnedTMSObjects: []
   _spawnedWeatherObjects: []
 --- !u!4 &857497405
@@ -24735,7 +24736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _imagery._layerProperty.sourceType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _options.scalingOptions.scalingType
@@ -24771,7 +24772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _imagery._layerProperty.sourceOptions.layerSource.Id
-      value: mapbox://styles/mapbox/streets-v10
+      value: mapbox://styles/mapbox/dark-v9
       objectReference: {fileID: 0}
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _vectorData._layerProperty.vectorSubLayers.Array.size
@@ -24788,6 +24789,10 @@ PrefabInstance:
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _vectorData._layerProperty.locationPrefabList.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
+      propertyPath: _terrain._layerProperty.requiredOptions.exaggerationFactor
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114478715909612932, guid: e6b749c6d877f4c19a5a5c3c0783d53b, type: 3}
       propertyPath: _options.extentOptions.defaultExtents.cameraBoundsOptions.camera
